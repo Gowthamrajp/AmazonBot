@@ -1,13 +1,22 @@
+from msilib.schema import Class
+from pydoc import classname
 import requests
 from bs4 import BeautifulSoup
-r = requests.get("https://www.amazon.in/gp/product/B01ELNPG2I/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1")
- 
-# Parsing the HTML
-soup = BeautifulSoup(r.content, 'html.parser')
- 
-# Finding by id
-s = soup.find
- 
+url="https://www.amazon.in/AmazonBasics-VCS35B15K-C-1-5-Litre-Bagless-Cylinder/dp/B07H3N8RJH?ref=dlx_66377_sh_dcl_img_1_23419dae_dt_mese3_9c"
 
+headers={"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US, en;q=0.5'
+        }
  
-print(content)
+page = requests.get(url, headers=headers)
+
+soup = BeautifulSoup(page.content,'html.parser')
+ 
+rawName = soup.find(id="productTitle")
+prodName=rawName.get_text().strip()
+rawPrice=soup.find_all("span", class_="a-price-whole")[0].get_text()
+cleanPrice = ''.join((x for x in rawPrice if x.isdigit()))
+prodPrice=(float(cleanPrice))
+
+print(prodName)
+print(prodPrice)
