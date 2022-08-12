@@ -1,0 +1,15 @@
+Date: 12/8/2022
+Time: 20:1
+Phone Number: +919500133791
+Message: Price of UPS changed
+--------------------
+Date: 12/8/2022
+Time: 20:2
+Phone Number: +919500133791
+Message: Price of UPS changed
+--------------------
+Date: 12/8/2022
+Time: 20:3
+Phone Number: +919500133791
+Message: Price of MousePad changed
+--------------------
