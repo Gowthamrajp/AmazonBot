@@ -28,4 +28,7 @@ def scrapper(name,url):
         print(prodName)
         print(prodPrice)
 
-scrapper(productData["ProductName"][1], productData["Product Link"][1])
+#scrapper function call for each product
+for x in range(0,len(productData["ProductName"])):
+        print(x)
+        scrapper(productData["ProductName"][x], productData["Product Link"][x])
