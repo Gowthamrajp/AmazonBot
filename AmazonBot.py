@@ -1,17 +1,18 @@
 import requests
+import os;
 from bs4 import BeautifulSoup
 import pandas as pd
 import pywhatkit
 
 #importing links from CSV using pandas
-productData = pd.read_csv ("productData.csv")  
+productData = pd.read_csv (os.getcwd()+"\productData.csv")  
 
 
 headers={"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
         'Accept-Language': 'en-US, en;q=0.5'
         }
 
-        
+  
 def scrapper(name,url,i):
         #Scrapping the Website data into soup
         page = requests.get(url, headers=headers)
@@ -23,12 +24,13 @@ def scrapper(name,url,i):
 
         rawPrice=soup.find_all("span", class_="a-price-whole")[0].get_text()
         cleanPrice = ''.join((x for x in rawPrice if x.isdigit()))
+
         prodPrice=(float(cleanPrice))
         #checking price change
         if productData["lastKnownPrice"][i]>prodPrice: 
         #updating price into CSV 
                 productData["lastKnownPrice"][i]=prodPrice
-                pywhatkit.sendwhatmsg_instantly("+919500133791", "Price of "+ name +" changed")
+                pywhatkit.sendwhatmsg_to_group_instantly("FaW8GSu5e7TKyvp4RCm6zX",  "Price of "+ name +" Reduced to: "+ str(prodPrice))#+" url is "+url)
         print(name)
         print(prodName)
         print(prodPrice)
