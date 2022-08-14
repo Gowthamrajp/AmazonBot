@@ -3,7 +3,15 @@ import os;
 from bs4 import BeautifulSoup
 import pandas as pd
 import pywhatkit
+import mysql.connector
 
+#setting up mySQL DB 
+
+myDb = mysql.connector.connect(
+        host="localhost",
+        user="gowtham",
+        passwd="Pandian@65"
+)
 #importing links from CSV using pandas
 productData = pd.read_csv (os.getcwd()+"\productData.csv")  
 
@@ -38,9 +46,9 @@ def scrapper(name,url,i):
         #updating price into CSV 
                 productData["lastKnownPrice"][i]=prodPrice
                 if(flag == 1):
-                        pywhatkit.sendwhatmsg_to_group_instantly("FaW8GSu5e7TKyvp4RCm6zX",  "Price of "+ name +" Reduced to: "+ str(prodPrice))#+" url is "+url)
+                        pywhatkit.sendwhatmsg_to_group_instantly(contents,  "Price of "+ name +" Reduced to: "+ str(prodPrice))#+" url is "+url)
                 else:
-                        pywhatkit.sendwhatmsg_instantly(content , "Price of "+ name +" Reduced to: "+ str(prodPrice))#+" url is "+url))
+                        pywhatkit.sendwhatmsg_instantly(contents , "Price of "+ name +" Reduced to: "+ str(prodPrice))#+" url is "+url))
 
         print(name)
         print(prodName)
