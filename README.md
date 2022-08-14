@@ -34,6 +34,7 @@ pip install mysql-connector-python
 - open and Update product details in "productData.csv"
 - open and Update Whatsapp number in "WhatsAppDetails.txt"
 - Create shortcut for 'AmazonBot.bat' and place it in startup folder (press Win+r , type shell:startup, and press enter)
+- Login to Whatsapp web in your default browser (Enable keep me signed in)
 - Restart your Device.
 - Installation and setup is done. your script will be running in the background
     
