@@ -9,9 +9,11 @@ import mysql.connector
 
 myDb = mysql.connector.connect(
         host="localhost",
-        user="gowtham",
+        user="Gowtham",
         passwd="Pandian@65"
 )
+myCursor = myDb.cursor()
+
 #importing links from CSV using pandas
 productData = pd.read_csv (os.getcwd()+"\productData.csv")  
 
@@ -58,5 +60,6 @@ def scrapper(name,url,i):
 #scrapper function call for each product
 for x in range(0,len(productData["ProductName"])):
         print(x+1)
-        scrapper(productData["ProductName"][x], productData["Product Link"][x],x)
+        #scrapper(productData["ProductName"][x], productData["Product Link"][x],x)
+        print(myDb)
 
