@@ -1,7 +1,3 @@
-
-![Logo](https://play-lh.googleusercontent.com/WM_vcLlp6vCLoc8O6W7KCKClI_PnKIZFlhnfkUoB7NSTEBrHbT_ZLww86M__DtZ2hMA)
-
-
 # Amazon price tracking Bot
 
 This bot tracks the prices of your fav products from amazon.in 
