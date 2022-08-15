@@ -1,14 +1,49 @@
-# AmazonBot
-Pre-Requisites
-install BeautifulSoup using "pip insall BeautifulSoup" in cmd
-install pandas using "pip install pandas" in cmd
-install requests using "pip install requests" in cmd
-install pywhatkit using :pip install pywhatkit" in cmd
+# Amazon price tracking Bot
 
-STEP 1 : add the names and links of the products you want to track in the "productData.csv" file and an exorbitant price to it
-STEP 2 : Log in to your whatsapp web account in your current browser
-STEP 3 : Open the "WhatsAppDetails.txt" and enter the destination mobile no. or the group code(got to group invite link and copy the code after "chat.whatsapp.com/" and paste in the txt
-STEP 4 : Run the "AmazonBot.bat" batch file and the updates will be recieved in your whatsapp
+This bot tracks the prices of your fav products from amazon.in 
 
-Optional
-place the shortcut of "AmazonBot.bat" in the path "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup" to start the batch file on startup
+
+## Features
+
+- Checks every 1hr for price drop
+- Notifies you on whatsapp if there is a price drop
+
+
+
+## Tech Stack
+
+**Script:** python
+
+**Scheduling Script:** Batch
+
+
+## Installation and setup
+
+-Download the Script folder 
+- Run the script _setup.bat 
+- or run the below commands in the terminal
+```bash
+pip install requests
+pip install os;
+pip install bs4 
+pip install BeautifulSoup
+pip install pandas
+pip install pywhatkit
+pip install mysql-connector-python
+```
+- open and Update product details in "productData.csv"
+- open and Update Whatsapp number in "WhatsAppDetails.txt"
+- Create shortcut for 'AmazonBot.bat' and place it in startup folder (press Win+r , type shell:startup, and press enter)
+- Login to Whatsapp web in your default browser (Enable keep me signed in)
+- Restart your Device.
+- Installation and setup is done. your script will be running in the background
+    
+## Feedback
+
+If you have any feedback, please reach out to us at write2gowthamraj@gmail.com
+
+
+## Authors
+
+- [@gowthamRaj](https://linktr.ee/reachgowthamraj)
+
