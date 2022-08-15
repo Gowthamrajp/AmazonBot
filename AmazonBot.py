@@ -60,6 +60,6 @@ def scrapper(name,url,i):
 #scrapper function call for each product
 for x in range(0,len(productData["ProductName"])):
         print(x+1)
-        #scrapper(productData["ProductName"][x], productData["Product Link"][x],x)
-        print(myDb)
+        scrapper(productData["ProductName"][x], productData["Product Link"][x],x)
+        #print(myDb)
 
