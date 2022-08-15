@@ -40,7 +40,7 @@ pip install mysql-connector-python
     
 ## Feedback
 
-If you have any feedback, please reach out to us at fake@fake.com
+If you have any feedback, please reach out to us at write2gowthamraj@gmail.com
 
 
 ## Authors
