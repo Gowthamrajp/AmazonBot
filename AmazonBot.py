@@ -51,6 +51,14 @@ def scrapper(name,url,i):
                         pywhatkit.sendwhatmsg_to_group_instantly(contents,  "Price of "+ name +" Reduced to: "+ str(prodPrice))#+" url is "+url)
                 else:
                         pywhatkit.sendwhatmsg_instantly(contents , "Price of "+ name +" Reduced to: "+ str(prodPrice))#+" url is "+url))
+        
+        if productData["lastKnownPrice"][i]<prodPrice: 
+        #updating price into CSV 
+                productData["lastKnownPrice"][i]=prodPrice
+                if(flag == 1):
+                        pywhatkit.sendwhatmsg_to_group_instantly(contents,  "Price of "+ name +" increased to: "+ str(prodPrice))#+" url is "+url)
+                else:
+                        pywhatkit.sendwhatmsg_instantly(contents , "Price of "+ name +" increased to: "+ str(prodPrice))#+" url is "+url))
 
         print(name)
         print(prodName)
